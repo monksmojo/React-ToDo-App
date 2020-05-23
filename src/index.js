@@ -2,11 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { ToDoProvider } from './context_providers/TodoContext';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ToDoProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ToDoProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
